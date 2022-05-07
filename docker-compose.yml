@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+  avax_subnets:
+    container_name: avax_subnets
+    image: pocketfoundation/avalanchego_subnets:latest
+    restart: unless-stopped
+    ports:
+      - "9650:9650"
+      - "9661:9651"
+      - "9661:9651/udp"
+      - "9100:9100"
+    volumes:
+      - "./config.json:/home/config.json"
+      - "./dfk_config.json:/home/q2aTwKuyzgs8pynF7UXBZCU7DejbZbZ6EUyHr3JQzYgwNPUPi/config.json"
+      - "/home/np/avax:/root/.avalanchego"
+      - "/home/np/avax:/root/.cache"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - default
