@@ -3,7 +3,7 @@ version: '3.6'
 services:
   avax_subnets:
     container_name: avax_subnets
-    image: pocketfoundation/avalanchego:1.7.10-subnets
+    image: pocketfoundation/avalanchego:v1.8.2-subnets
     restart: unless-stopped
     command: "/avalanchego/build/avalanchego --http-host= --config-file=/home/config.json"
     ports:
@@ -15,6 +15,7 @@ services:
       - "./config.json:/home/config.json"
       - "./dfk_config.json:/home/q2aTwKuyzgs8pynF7UXBZCU7DejbZbZ6EUyHr3JQzYgwNPUPi/config.json"
       - "/home/np/avax:/root/.avalanchego"
+      - "./upgrade.json:/home/q2aTwKuyzgs8pynF7UXBZCU7DejbZbZ6EUyHr3JQzYgwNPUPi/upgrade.json"
     logging:
       options:
         max-size: "10m"
