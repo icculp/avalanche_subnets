@@ -18,3 +18,4 @@ RUN git clone https://github.com/ava-labs/subnet-evm.git && \
     cd subnet-evm && \
     git checkout $SUBNET_VERSION && \
     ./scripts/build.sh /go/src/avalanchego/build/plugins/mDV3QWRXfwgKUWb9sggkv4vQxAQR4y2CyKrt5pLZ5SzQ7EHBv
+
