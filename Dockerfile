@@ -1,4 +1,4 @@
-FROM golang:1.19.1 AS avalanche
+FROM golang:1.19.6 AS avalanche
 
 ARG AVALANCHE_VERSION
 
