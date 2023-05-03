@@ -3,7 +3,7 @@ version: '3.6'
 services:
   avax_subnets:
     container_name: avax_subnets
-    image: icculp/avax_dfk:v1.9.16-v0.4.12
+    image: icculp/avax_dfk:v1.10.1-v0.5.1
     restart: unless-stopped
     command: "/go/src/avalanchego/build/avalanchego  --config-file=/home/config/config.json"
     ports:
@@ -19,5 +19,14 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - default
+      avax:
+        ipv4_address: 192.168.103.3
 
+
+networks:
+  avax:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.103.0/24"
