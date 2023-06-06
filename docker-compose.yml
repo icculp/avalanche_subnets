@@ -3,7 +3,7 @@ version: '3.6'
 services:
   avax_subnets:
     container_name: avax_subnets
-    image: icculp/avax_dfk:v1.10.1-v0.5.1
+    image: icculp/avax_dfk:v1.10.2-v0.5.1
     restart: unless-stopped
     command: "/go/src/avalanchego/build/avalanchego  --config-file=/home/config/config.json"
     ports:
